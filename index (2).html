@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pizzaria do ye</title>
+    <style>
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+header {
+    background:linear-gradient(to top,#fffefd,#FF8C00	);
+    color: #ffffff;
+    width: 100%;
+    font-size: 1.8rem;
+    padding: 1rem;
+}
+
+footer {
+    background:linear-gradient(to bottom,#fffefd,#FF8C00	);
+    color: black;
+    padding: 1rem;
+    font-size: 1.8rem;
+    text-align: center;
+    width: 100%;
+}
+.conteudo {
+    font-size: 1.6rem;
+    background-color: #fff;
+    padding: 1rem;
+    margin: 0 auto;
+}
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 1px 1px 3px black;
+    color: #ff0040;
+}
+h2 {
+    font-size: 1.9rem;
+}
+h3 {
+    font-size: 1.7rem;
+}
+h4 {
+    font-size: 1.4rem;
+}
+h5{
+    font-size: 3rem;
+    color: red;
+    text-shadow: 1px 1px 3px black;
+    text-align: center;
+
+}
+body {
+    background-color: rgb(255, 255, 255);
+}
+figure {
+    text-align: center;
+}
+.imagem-site {
+    border-radius: 10px 10px 50px 10px;
+    width: 50%;
+    height: 50%;
+    border: solid;
+}
+@media(min-width: 280px) and (max-width: 450px) {
+    .imagem-site {
+        border-radius: 10px 10px 10px 10px;
+        width: 60%;
+        height: 40%;
+    }
+}
+#compras {
+    background-color: rgba(229, 233,0, 0.50);
+    width: 300px;
+    height: 100px;
+    right: 0;
+    position: fixed;
+    text-align: center;
+    margin-top: 20rem;
+    z-index: 1;
+    border-radius: 20px;
+    padding-top: 30px;
+    border: solid black;
+}
+@media(min-width:200px)and(max-width:200px){
+#compras {
+    background-color: rgba(229, 233,0, 0.50);
+    width: 180px;
+    height: 100px;
+    right: 0;
+    position: fixed;
+    text-align: center;
+    margin-top: 20rem;
+    z-index: 1;
+    border-radius: 20px;
+    padding-top: 5px;
+    border: solid black;
+}
+}
+#grid-conteudo {
+    background-color: rgb(255, 255, 255);
+}
+.grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    max-width: 750px;
+    grid-gap: 1px;
+    margin: 0 auto;
+}
+#grid-conteudo .grid div {
+    background-color: #fffffd;
+    text-align: center;
+    padding: 1rem;
+}
+#formulario {
+    background-color: #dcdcdc;
+}
+input{
+    border: solid;
+    padding: 2px;
+    border-radius: 10px;
+    font-style: 1.8rem;
+}
+#mensagem{
+    border: solid;
+    padding: 2px;
+    border-radius: 10px;
+    font-style: 1.8rem;
+}
+#btn-limpar{
+    background-color: #fff;
+    color: black;
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+}
+#btn-enviar{
+    background-color: #f80101;
+    color: black;
+    text-align: center;
+    padding: 5px;
+    font-weight: bold; 
+}
+nav{
+    text-align: right;
+    font-size: 1.6rem;
+    word-spacing: 20px;
+    margin-right: 5%;
+}
+a{
+    text-decoration: none;
+    color: #ffee00;
+    font-weight: bold;
+    text-shadow: 2px 2px 3px #000000;
+    background-color: rgb(185, 3, 3);
+    border-radius: 20px;
+    padding: 5px;
+}
+a:hover{
+    color: #ffffff;
+    text-shadow: 2px 2px 3px #000000;
+    background-color: #FF8C00;
+    padding: 4px;
+    border-radius: 10px;
+    border: solid yellow;
+}
+#btn-compras{
+   text-align: center;
+}
+    </style> 
+
+</head>
+
+    <body>
+    <header>   
+        <nav>
+            <a href="#Pizza">PIZZAS</a>
+            <a href="#Bebidas">BEBIDAS</a>
+            <a href="#Salgado">SALGADOS</a>
+        </nav>    
+        <br>
+        <figure>
+            <img src="https://pizzariabairrocurso.netlify.app/img/pizzaBairro.png"alt="Logo tipo">
+
+        </figure>
+    </header>
+    <div id="compras">
+        
+        <h4>Caixa de compras</h4>
+        <br>
+        <a href="pedidos.html">
+            <button id="btn-compras"> <h4> PEDIDO</h4></button>
+        </a>
+       
+    </div>
+    <br>
+    <section class="conteudo">
+       
+        <h1>Pizzas,Bebidas e Salgados Todos os Dias</h1>
+        <br>
+    <h5>Promoção</5h>
+    <h5>De Segunda a Quinta todas as PIZZAS por</h5>
+    <h5>Apenas por R$55,00</h5>
+    </section>
+    <br>
+    <br>
+    <section class="conteudo"id="grid-conteudo">
+         <h5>Cardapío de Pizzas</h5>
+         <br>
+     <a href="#" id="Pizza"></a>
+         <div class="grid">
+        <div>
+            <figure><img  class="imagem-site" src="https://cdn0.tudoreceitas.com/pt/posts/9/8/3/pizza_calabresa_e_mussarela_4389_600.jpg" alt="Pizza Calabresa">
+            <figcaption><a href="#">Pizza Calabresa</a></figcaption>
+            </figure>
+        </div>
+        <div><figure><img class="imagem-site"src="https://www.sabornamesa.com.br/media/k2/items/cache/ada34cd2101afafaba465aad112ee3c1_XL.jpg"alt="Pizza de Frango">
+            <figcaption><a href="#">Pizza de Frango</a></figcaption>    
+            </figure>
+        </div>
+        <div><figure><img class="imagem-site" src="https://www.cache2net2.com//Repositorio/8139/Produtos/b4d916ad-e.jpeg?=1652382-1" alt="Pizza mussarela">
+            <figcaption><a href="#">Pizza de Mussarela</a></figcaption>
+        </div>
+        <div><figure><img class="imagem-site" src="https://s2.glbimg.com/aFoqCzw7F4F70bemOasEUUvaPCA=/620x455/e.glbimg.com/og/ed/f/original/2020/11/05/pizza_vegana.jpg"alt="Pizza palmito">
+        <figcaption><a href="#">Pizza Palmito</a></figcaption></figure>
+        </div>
+        <div>
+            <figure><img class="imagem-site" src="https://th.bing.com/th/id/R.c79983fc8b1cec7e3450a67418737039?rik=%2fGse8fyxuUfHUw&pid=ImgRaw&r=0" alt="Pizza marguerita">
+            <figcaption><a href="#">Pizza de Marguerita</a></figcaption></figure>
+        </div>
+        <div>
+            <figure><img class="imagem-site" src="https://folhadomate.com/wp-content/uploads/2016/09/48388-receita-de-pizza-portuguesa-1.jpg" alt="Pizza Portuguesa">
+            <figcaption><a href="#"> Portuguesa</a></figcaption></figure>
+        </div>
+     </div>  
+     </section>
+    <br>
+    <a href="#" id="Bebidas"></a>
+    <section class="conteudo"id="grid-conteudo">
+        <h5>Bebidas</h5>
+        <br>
+    <div class="grid">
+       <div>
+           <figure><img  class="imagem-site" src="https://images-americanas.b2w.io/produtos/4366762915/imagens/refrigerante-coca-cola-original-2l-6-unidades/4366762915_1_large.jpg" alt="coca-cola">
+           <figcaption><a href="#">Coca-Cola</a></figcaption>
+           </figure>
+       </div>
+       <div><figure><img class="imagem-site"src="https://riosupermarket.com/image/cache/catalog/Antarctica%20Guarana%20Em%20Lata(%206%20Unid.)-500x500.jpg"alt="Guarana">
+           <figcaption><a href="#">Guaraná</a></figcaption>    
+           </figure>
+       </div>
+       <div><figure><img class="imagem-site" src="https://www.varanda.com.br/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/r/e/ref-sprite-l-lim-350-7894900681017.jpg" alt="Sprite">
+           <figcaption><a href="#">Sprite</a></figcaption>
+       </div>
+       <div><figure><img class="imagem-site" src="https://aguaverde.confeitaria2irmaos.com.br/wp-content/uploads/2023/11/Agua-Mineral-1.jpg"alt="Aguá">
+       <figcaption><a href="#">Água</a></figcaption></figure>
+       </div>
+       <div>
+           <figure><img class="imagem-site" src="https://io.convertiez.com.br/m/trimais/shop/products/images/2/medium/refrigerante-coca-cola-original-garrafa-2l_2.jpg" alt="Coca-2l">
+           <figcaption><a href="#">Coca-Cola 2L</a></figcaption></figure>
+       </div>
+       <div>
+           <figure><img class="imagem-site" src="https://destro.fbitsstatic.net/img/p/refrigerante-guarana-antarctica-pet-2l-78509/265064-1.jpg?w=500&h=500&v=no-change&qs=ignore" alt="Guarana 2l">
+           <figcaption><a href="#">Guaraná 2L</a></figcaption></figure>
+       </div>
+    </div>  
+    </section>
+</section>
+<br>
+<a href="#" id="Salgado"></a>
+<section class="conteudo"id="grid-conteudo">
+    <h5>Salgados</h5>
+    <br>
+<div class="grid">
+   <div>
+       <figure><img  class="imagem-site" src="https://nicopaneteria.com.br/wp-content/uploads/2023/02/mini-coxinha.jpg" alt="Coxinha">
+       <figcaption><a href="#">Coxinha</a></figcaption>
+       </figure>
+   </div>
+   <div><figure><img class="imagem-site"src="https://i.pinimg.com/564x/6e/94/32/6e9432d8233e27a0cbc9d125c0089fb5.jpg"alt="Pastel">
+       <figcaption><a href="#">Pastel</a></figcaption>    
+       </figure>
+   </div>
+   <div><figure><img class="imagem-site" src="https://www.easyanddelish.com/wp-content/uploads/2020/11/rissoles-3-risoles-3-1-500x500.jpg" alt="Risole">
+       <figcaption><a href="#">Risole</a></figcaption>
+   </div>
+   <div><figure><img class="imagem-site" src="https://img.saborosos.com.br/imagens/enroladinho-de-salsicha-500x500.jpg"alt="Enroladinhos">
+   <figcaption><a href="#">Enroladinho</a></figcaption></figure>
+   </div>
+   <div>
+       <figure><img class="imagem-site" src="https://gomesdacosta.com.br/wp-content/uploads/2018/06/Pastel-de-Forno-500x500.jpg" alt="Pastel-de-Forno">
+       <figcaption><a href="#">Pastel de Forno</a></figcaption></figure>
+   </div>
+   <div>
+       <figure><img class="imagem-site" src="https://nicopaneteria.com.br/wp-content/uploads/2023/02/mini-empada-de-palmito.jpg" alt="Empada">
+       <figcaption><a href="#">Empada</a></figcaption></figure>
+   </div>
+</div>  
+
+    <footer>
+        <h2>Pizza do Bairro</h3> 
+        <h3>A melhor Opção da Região</h4>
+        <h4>Whatsapp (81)9999-0000</h4>
+        <h4>Desenvolvido por Diego</h4>
+    </footer>
+</body>
+</html>

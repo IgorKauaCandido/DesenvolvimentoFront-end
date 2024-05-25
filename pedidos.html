@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <link rel="stylesheet" href="pizzaria.css" />
+    <script src="pizzaria1.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Pedidos de Pizzaria</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        width: 300px;
+        margin: auto;
+        padding: 20px;
+      }
+      input,
+      select,
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      #total {
+        background-color: #f8f8f8;
+        padding: 10px;
+        width: 160px;
+        text-align: left;
+        position: fixed;
+        top: 0;
+        right: 0;
+        border: 1px solid #ccc;
+        border-radius: 9px;
+      }
+    </style>
+    <style>
+      body {
+        height: 100vh;
+        background: cornsilk no-repeat center;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Faça seu pedido</h2>
+      <input type="text" id="nome" placeholder="Nome completo" />
+      <input type="text" id="endereco" placeholder="Endereço" />
+
+      <label for="pizza" style="margin: 5px" ;
+        >Escolha sua pizza (R$55,00 cada):</label
+      >
+      <select id="pizza" onchange="alterarTempo(); calcularTotal();">
+        <option value="calabresa">Pizza Calabresa</option>
+        <option value="frango">Pizza Frango</option>
+        <option value="mussarela">Pizza Mussarela</option>
+        <option value="palmito">Pizza Palmito</option>
+        <option value="margherita">Pizza Margherita</option>
+        <option value="portuguesa">Pizza Portuguesa</option>
+      </select>
+
+      <label for="salgado" style="margin: 5px" ;
+        >Escolha seu salgado (R$7,00 cada):</label
+      >
+      <select id="salgado" onchange="calcularTotal();">
+        <option value="nenhum">Nenhum</option>
+        <option value="coxinha">Coxinha</option>
+        <option value="pastel">Pastel</option>
+        <option value="risole">Risole</option>
+        <option value="enroladinho">Enroladinho</option>
+        <option value="pastel_forno">Pastel de Forno</option>
+        <option value="empada">Empada</option>
+      </select>
+
+      <label for="bebida" style="margin: 5px" ;>Escolha sua bebida:</label>
+      <select id="bebida" onchange="calcularTotal();">
+        <option value="nenhum">Nenhum</option>
+        <option value="agua">Água</option>
+        <option value="Coca lata">Coca-cola:350ml (R$4,00)</option>
+        <option value="sprite lata">Sprite:350ml (R$4,00)</option>
+        <option value="coca 2L">Coca-cola: 2L (R$7,00)</option>
+        <option value="Guarana antartica">
+          Guaraná Antártica: 350mlL (R$4,00)
+        </option>
+        <option value="antartica 2L">Guaraná Antártica: 2L (R$7,00)</option>
+        <option value="cerveja">Cerveja (R$6,00)</option>
+      </select>
+
+      <label for="pagamento" style="margin: 5px" ;>Forma de pagamento:</label>
+      <select id="pagamento">
+        <option value="dinheiro">Dinheiro</option>
+        <option value="cartao">Cartão de Crédito/Débito</option>
+        <option value="pix">Pix</option>
+      </select>
+
+      <p id="tempo" class="tempoplace">
+        Tempo estimado de entrega: <span id="tempoValor"></span>
+      </p>
+      <p class="tempoplace">Taxa de entrega: R$15,00</p>
+
+      <button onclick="enviarPedido()">Enviar Pedido</button>
+
+      <div id="total" class="totalplace">
+        Total do pedido: R$<span id="totalValor"></span>
+      </div>
+      <br />
+      <br />
+      <script>
+        function alterarTempo() {
+          var pizza = document.getElementById('pizza').value;
+          var tempo = document.getElementById('tempoValor');
+
+          if (pizza == 'calabresa') {
+            tempo.textContent = '45 minutos';
+          } else if (pizza == 'frango') {
+            tempo.textContent = '50 minutos';
+          } else if (pizza == 'mussarela') {
+            tempo.textContent = '55 minutos';
+          } else if (pizza == 'palmito') {
+            tempo.textContent = '60 minutos';
+          } else if (pizza == 'margherita') {
+            tempo.textContent = '65 minutos';
+          } else if (pizza == 'portuguesa') {
+            tempo.textContent = '70 minutos';
+          }
+        }
+
+        function calcularTotal() {
+          var pizzaPreco = 55;
+          var salgadoPreco =
+            document.getElementById('salgado').value != 'nenhum' ? 7 : 0;
+          var bebidaPreco = 0;
+          var bebida = document.getElementById('bebida').value;
+
+          if (
+            bebida == 'Coca lata' ||
+            bebida == 'sprite lata' ||
+            bebida == 'Guarana antartica'
+          ) {
+            bebidaPreco = 4;
+          } else if (bebida == 'coca 2L' || bebida == 'antartica 2L') {
+            bebidaPreco = 7;
+          } else if (bebida == 'cerveja') {
+            bebidaPreco = 6;
+          }
+
+          var entrega = 15;
+          var total = pizzaPreco + salgadoPreco + bebidaPreco + entrega;
+
+          document.getElementById('totalValor').textContent = total.toFixed(2);
+        }
+
+        function enviarPedido() {
+          var nome = document.getElementById('nome').value;
+          var endereco = document.getElementById('endereco').value;
+          var pizza = document.getElementById('pizza').value;
+          var salgado = document.getElementById('salgado').value;
+          var bebida = document.getElementById('bebida').value;
+          var pagamento = document.getElementById('pagamento').value;
+          var tempo = document.getElementById('tempoValor').textContent;
+          var mensagem =
+            'Nome: ' +
+            nome +
+            ', Endereço: ' +
+            endereco +
+            ', Pizza: ' +
+            pizza +
+            ', Salgado: ' +
+            salgado +
+            ', Bebida: ' +
+            bebida +
+            ', Pagamento: ' +
+            pagamento +
+            ', Tempo de entrega: ' +
+            tempo;
+
+          var numero = '5581994866778';
+          var url =
+            'https://wa.me/' + numero + '?text=' + encodeURIComponent(mensagem);
+          window.open(url);
+        }
+      </script>
+    </div>
+  </body>
+</html>
